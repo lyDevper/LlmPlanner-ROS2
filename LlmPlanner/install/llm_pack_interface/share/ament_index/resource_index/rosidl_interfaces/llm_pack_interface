@@ -1,0 +1,6 @@
+msg/TrajContext.idl
+msg/TrajContext.msg
+srv/String.idl
+srv/String.srv
+srv/String_Request.msg
+srv/String_Response.msg

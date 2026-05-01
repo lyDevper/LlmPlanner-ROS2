@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from llm_pack_interface/srv/String.srv
+// generated code does not contain a copyright notice
+
+
+module llm_pack_interface {
+  module srv {
+    struct String_Request {
+      string prompt;
+    };
+    struct String_Response {
+      string response;
+    };
+  };
+};

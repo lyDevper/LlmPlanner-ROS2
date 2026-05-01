@@ -1,0 +1,3 @@
+source;share/llm_pack/environment/ament_prefix_path.sh
+source;share/llm_pack/environment/path.sh
+source;share/llm_pack/environment/pythonpath.sh

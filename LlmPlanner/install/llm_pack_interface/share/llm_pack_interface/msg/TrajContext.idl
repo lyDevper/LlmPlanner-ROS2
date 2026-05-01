@@ -1,0 +1,36 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from llm_pack_interface/msg/TrajContext.msg
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Vector3.idl"
+
+module llm_pack_interface {
+  module msg {
+    module TrajContext_Constants {
+      const uint8 ACCELERATION = 0;
+      const uint8 CONSTANT = 1;
+      const uint8 DECELERATION = 2;
+    };
+    @verbatim (language="comment", text=
+      "TrajectPart Enum Constants")
+    struct TrajContext {
+      @verbatim (language="comment", text=
+        "Goal position (3D vector)")
+      geometry_msgs::msg::Vector3 s_goal;
+
+      @verbatim (language="comment", text=
+        "Kinematic parameters")
+      float v_const;
+
+      float a;
+
+      @verbatim (language="comment", text=
+        "Current pose at window start (Optional/Filled by FM if needed)")
+      geometry_msgs::msg::Vector3 q_init;
+
+      @verbatim (language="comment", text=
+        "Current state machine part (Default: CONSTANT)")
+      uint8 part;
+    };
+  };
+};

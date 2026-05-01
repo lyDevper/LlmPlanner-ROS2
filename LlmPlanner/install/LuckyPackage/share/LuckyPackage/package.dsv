@@ -1,0 +1,8 @@
+source;share/LuckyPackage/hook/cmake_prefix_path.ps1
+source;share/LuckyPackage/hook/cmake_prefix_path.dsv
+source;share/LuckyPackage/hook/cmake_prefix_path.sh
+source;share/LuckyPackage/local_setup.bash
+source;share/LuckyPackage/local_setup.dsv
+source;share/LuckyPackage/local_setup.ps1
+source;share/LuckyPackage/local_setup.sh
+source;share/LuckyPackage/local_setup.zsh
