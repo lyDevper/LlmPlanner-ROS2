@@ -43,6 +43,8 @@ def make_publish_context_tool(node):
             Max velocity: 0.2 m/s
             Min acceleration: 0.02 m/s^2
             Max acceleration: 0.04 m/s^2
+            Min distance to goal: 0.0 m
+            Max distance to goal (per one trajectory plan): 5.0 m
 
         Returns: success or error message
         """
@@ -80,8 +82,10 @@ class LlmNode(Node):
         self.systemInstructions = [
             {"role": "system", "content": "You are the high-level planning brain of a mobile robot, attached with a LangChain tool function. Your job is to interpret the prompt and plan the trapezoidal trajectory, by specifying the kinematic parameters."},
             {"role": "system", "content": "When given a prompt, you must infer and  determine the appropriate values of spatial goal (x, y, z), a constant phase velocity (v_const), and an acceleration rate (a)."},
+            {"role": "system", "content": "You must infer and estimate the appropriate trajectory parameters, even the prompt is ambiguous or does not explicitly specify the parameters. The prompt may be high-level and abstract, but You must use your reasoning to deduce the necessary trajectory parameters."},
             {"role": "system", "content": "Call the 'publish_context' tool with these parameters to command the robot trajectory. The publish_context tool will handle publishing the context message to the ROS2 trajectory generation node."},
             {"role": "system", "content": "You must call a tool with the correct format of trapezoidal trajectory parameters in the tool arguments."},
+            {"role": "system", "content": "You must call the tool without hesitation. Do not  ask for comfirmation again without calling the tool."},
             {"role": "system", "content": "Call the tool once for the entire trajectory."}
         ]
         self.history = self.systemInstructions.copy()
